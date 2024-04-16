@@ -11,6 +11,8 @@ def main():
     clock = pg.time.Clock()
     font = pg.font.Font(None, 80)
 
+    clock.tick(10)
+
     enn = pg.Surface((20, 20))
     pg.draw.circle(enn, (255, 0, 0), (10, 10), 10)
     enn.set_colorkey((0, 0, 0))
