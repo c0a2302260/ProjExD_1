@@ -21,15 +21,17 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_list = pg.key.get_pressed()
-
+        
+        dx, dy = -1, 0
         if key_list[pg.K_UP]:
-            kk_rect.move_ip(0, -1)
+            dy -= 1
         if key_list[pg.K_DOWN]:
-            kk_rect.move_ip(0, 1)
+            dy += 1
         if key_list[pg.K_RIGHT]:
-            kk_rect.move_ip(1, 0)
+            dx += 1
         if key_list[pg.K_LEFT]:
-            kk_rect.move_ip(-1, 0)
+            dx -= 1
+        kk_rect.move_ip(dx, dy)
 
         x = -(tmr%3200)
         screen.blit(bg_img, [x, 0])
